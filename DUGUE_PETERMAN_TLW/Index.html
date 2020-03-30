@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BoulGourKing - Accueil</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <script src="JS/Script.js"></script>
+</head>
+<body>
+    <header>
+        <a href="Index.html" class="headerlink">
+            <h1 id="titre">BoulGourKing</h1>
+            <h2 id="stitre">Sejour plein d'épices</h2>
+        </a>
+        <nav id="menu">
+            <a href="./index.html">Accueil </a>
+            <a href="./HTML/contact.html"> A propos & Contact </a>
+            <a href="./HTML/recapitulatif.html" id="panier"> Récapitulatif </a>
+        </nav>
+    </header>
+    <main id="destinations">
+        <section class="filtre">
+            <fieldset class="filtrebox" id="filtreprix">
+                <ul>
+                    <legend>Prix</legend>
+                    <li>Prix min : <input type="text" name="prixmin" id="prixmin" onchange="check_prix()" /> âmes</li>
+                    <li>Prix max : <input type="text" name="prixmax" id="prixmax" onchange="check_prix()" /> âmes</li>
+                </ul>
+            </fieldset>
+            <fieldset class="filtrebox" id="filtredate">
+                <ul>
+                    <legend>Dates de disponibilité</legend>
+                    <li>Date d'arrivée : <input type="date" name="filtrearrivee" id="filtrearrivee" onchange="check_dispo()" /></li>
+                    <li>Date de départ : <input type="date" name="filtredepart" id="filtredepart" onchange="check_dispo()" /></li>
+                </ul>
+            </fieldset>
+            <fieldset class="filtrebox" id="filtrecbox">
+                <ul>
+                    <legend>Autres détails</legend>
+                    <li><input type="checkbox" name="cboxenfants" id="cboxenfants" onclick="check_autre()" /> Enfants acceptés uniquement</li>
+                    <li><input type="checkbox" name="cboxpetitdej" id="cboxpetitdej" onclick="check_autre()" /> Petit déjeuner disponible</li>
+                </ul>
+            </fieldset>
+        </section>
+        <script>displayDestinations("destinations");</script>
+    </main>
+    <footer>
+        <p>BoulGourKing © Dorian DUGUE, Hugo PERTERMANN - 2020</p>
+    </footer>
+    <script>loadPanier()</script>
+</body>
+</html>
